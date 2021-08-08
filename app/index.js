@@ -1,11 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 var bodyParser = require('body-parser')
+var cors = require('cors')
+var app = express()
+ 
+
 
 // Databases
 require('./db/sequelize');
 
 const app = express();
+
+
+app.use(cors())
 
 // parse application/json
 app.use(bodyParser.json())

@@ -9,8 +9,6 @@ var app = express()
 // Databases
 require('./db/sequelize');
 
-const app = express();
-
 
 app.use(cors())
 

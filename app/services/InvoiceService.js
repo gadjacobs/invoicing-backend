@@ -35,7 +35,7 @@ module.exports = {
             customerid: data.customer_id
       })
 
-      await customer.setInvoices([result])
+      await customer.setCustomer([result])
 
 
       if(result){

@@ -31,12 +31,13 @@ module.exports = {
           })
       }else{
 
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Error inserting customer record"
         })
       
-
+    })
       }
   
 
@@ -124,12 +125,12 @@ delete: async (params) => {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Cannot find user with id "+ user_id +". Unable to delete"
         })
-      
+    })
 
       }
   
@@ -179,12 +180,12 @@ delete: async (params) => {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Cannot find user with id "+ user_id +". Unable to delete"
         })
-      
+    })
 
       }
   
@@ -234,13 +235,13 @@ delete: async (params) => {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Cannot find user with id "+ user_id
         })
       
-
+    })
       }
   
 

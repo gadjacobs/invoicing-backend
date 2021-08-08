@@ -76,12 +76,12 @@ module.exports = {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Error inserting invoice record"
         })
-      
+    })
 
       }
   
@@ -169,13 +169,13 @@ delete: async (params) => {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Cannot find invoice with id "+ invoice_id +". Unable to delete"
         })
       
-
+    })
       }
   
 
@@ -227,12 +227,12 @@ delete: async (params) => {
           
           })
       }else{
-
+        return new Promise((resolve, reject) => {
         resolve({
             status:false,
             message: "Cannot find invoice with id "+ invoice_id
         })
-      
+    })
 
       }
   

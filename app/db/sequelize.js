@@ -40,7 +40,7 @@ Object.keys(db).forEach(function (modelName) {
 });
 
 
-//db['customer'].hasMany(db['invoice'],{as:'Invoices'})
+db['customer'].hasMany(db['invoice'],{as:'Invoices'})
 
 db['invoice'].hasMany(db['item'], {as: 'Items'})
 

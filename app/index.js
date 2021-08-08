@@ -84,6 +84,18 @@ app.route('/products/:product_id').get(async (req, res) => {
 });
 
 
+app.route('/products/search').get(async (req, res) => {
+	try {
+
+		const query = req.query
+		const products = await ProductService.search(query)
+	
+		res.json(products);
+	} catch (e) {
+		throw e;
+	}
+});
+
 app.route('/products').post(async (req, res) => {
 	try {
 
@@ -95,6 +107,8 @@ app.route('/products').post(async (req, res) => {
 		throw e;
 	}
 });
+
+
 
 
 

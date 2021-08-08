@@ -208,7 +208,50 @@ delete: async (params) => {
   },
 
 
+search: async (query) => {
 
+    try{
+
+        const searchQuery = query.q
+
+        console.log("search term", searchQuery)
+
+       const products = await ProductModel.findAll({
+        where: {
+            name: {
+                [Sequelize.Op.iLike]: '%'+searchQuery+'%'
+            }
+        }
+    });
+
+
+
+
+        return new Promise((resolve, reject) => {
+   
+            resolve({
+                status:true,
+                data: products
+            })
+          
+          })
+ 
+  
+
+    }catch(error){
+
+
+      return new Promise((resolve, reject) => {
+   
+        reject(error)
+     
+    })
+
+    }
+
+
+
+  },
 
   findOne: async (params) => {
 

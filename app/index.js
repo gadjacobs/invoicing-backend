@@ -115,6 +115,16 @@ app.route('/products').post(async (req, res) => {
 
 
 
+app.route('/invoices/:invoice_id').get(async (req, res) => {
+	try {
+		const params = req.params
+		const customer = await InvoiceService.findOne(params)
+	
+		res.json(customer);
+	} catch (e) {
+		throw e;
+	}
+});
 
 
 app.route('/invoices').get(async (req, res) => {

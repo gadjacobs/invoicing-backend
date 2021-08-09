@@ -108,7 +108,10 @@ module.exports = {
 
         let invoices = []
 
-        invoices = await InvoiceModel.findAll({ include: ['Items','Customer'] });
+        invoices = await InvoiceModel.findAll({     include: [
+          {model: ItemModel,  as: 'Items', include: ['Product'] },
+          {model: CustomerModel, as: 'Customer' }
+        ] });
 
 
         return new Promise((resolve, reject) => {

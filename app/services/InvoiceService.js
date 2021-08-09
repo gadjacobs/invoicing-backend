@@ -211,7 +211,11 @@ delete: async (params) => {
         where: {
           id: invoice_id
         },
-         include: ['Items','Customer'] 
+        include: [
+            {model: ItemModel,  as: 'Items', include: ['Product'] },
+            {model: CustomerModel, as: 'Customer' }
+          ]
+       //  include: ['Items','Customer'] 
       });
 
 

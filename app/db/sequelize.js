@@ -46,10 +46,10 @@ db['invoice'].hasMany(db['item'], {as: 'Items'})
 
 db['invoice'].belongsTo(db['customer'], {as: 'Customer'})
 
-db['product'].hasMany(db['item'],{as:'Items'})
+//db['product'].hasMany(db['item'],{as:'Items'})
 
+db['item'].belongsTo(db['product'],{as:'Product'})
 
-//Project.hasMany(User, {as: 'Workers'})
 
 // This creates the table if it doesn't exist (and does nothing if it already exists)
 sequelize
